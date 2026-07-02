@@ -73,24 +73,9 @@ export default function LetsChat() {
   ];
 
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      height: 'calc(100vh - 180px)',
-      background: '#fff',
-      border: '1.5px solid var(--clr-border)',
-      borderRadius: 'var(--r-2xl)',
-      overflow: 'hidden'
-    }}>
+    <div className="chat-window">
       {/* Header */}
-      <div style={{
-        padding: 'var(--sp-4) var(--sp-6)',
-        borderBottom: '1px solid var(--clr-border)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        background: 'var(--clr-primary-light)'
-      }}>
+      <div className="chat-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
           <Bot size={20} color="var(--clr-primary)" />
           <div>
@@ -117,14 +102,7 @@ export default function LetsChat() {
         overflow: 'hidden'
       }}>
         {/* Messages list */}
-        <div style={{
-          flex: 1,
-          padding: 'var(--sp-6)',
-          overflowY: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--sp-4)'
-        }}>
+        <div className="chat-messages-container">
           {messages.length === 0 ? (
             <div style={{
               display: 'flex',
@@ -177,11 +155,8 @@ export default function LetsChat() {
             messages.map((m, i) => (
               <div
                 key={i}
+                className="chat-bubble-wrap"
                 style={{
-                  display: 'flex',
-                  gap: 'var(--sp-3)',
-                  alignItems: 'flex-start',
-                  maxWidth: '85%',
                   alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start',
                   flexDirection: m.role === 'user' ? 'row-reverse' : 'row'
                 }}
@@ -251,14 +226,7 @@ export default function LetsChat() {
         </div>
 
         {/* Input area */}
-        <div style={{
-          padding: 'var(--sp-4) var(--sp-6)',
-          borderTop: '1px solid var(--clr-border)',
-          background: '#fff',
-          display: 'flex',
-          gap: 'var(--sp-3)',
-          alignItems: 'center'
-        }}>
+        <div className="chat-input-area">
           <input
             placeholder="Type your study question here..."
             value={input}

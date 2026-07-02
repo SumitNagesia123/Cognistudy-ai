@@ -167,7 +167,7 @@ export default function History() {
                           >
                             {getIcon(item.type)}
                           </div>
-                          <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '320px' }}>
+                          <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 'calc(100vw - 240px)', minWidth: '80px' }}>
                             <div className="truncate" style={{ fontSize: 'var(--text-sm)' }}>
                               {item.input || 'AI Generation'}
                             </div>

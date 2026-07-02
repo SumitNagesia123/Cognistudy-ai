@@ -69,7 +69,7 @@ export default function Topbar({ onOpenModal, onOpenSidebar, onNavigate }) {
           aria-label="Create new material"
         >
           <Plus size={15} />
-          New
+          <span className="topbar__new-txt">New</span>
         </button>
 
         {/* Points Chip */}

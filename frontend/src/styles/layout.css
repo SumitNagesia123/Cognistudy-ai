@@ -346,3 +346,13 @@
   .topbar__profile-info { display: none; }
   .content-area { padding: var(--sp-5) var(--sp-4); }
 }
+
+@media (max-width: 480px) {
+  .topbar__new-txt { display: none; }
+  .topbar__points-value { display: none; }
+  .topbar__points { padding: 5px 8px; gap: 2px; }
+  .topbar__profile { padding: 5px; }
+  .topbar__profile svg { display: none; }
+  .topbar__right { gap: var(--sp-2); }
+}
+

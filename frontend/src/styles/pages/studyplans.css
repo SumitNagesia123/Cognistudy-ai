@@ -25,6 +25,17 @@
   align-items: center;
   gap: var(--sp-8);
 }
+@media (max-width: 600px) {
+  .studyplans-header__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .studyplans-tabs {
+    align-self: flex-start !important;
+    margin-bottom: 0 !important;
+  }
+}
 
 .studyplans-header__title-wrap {
   display: flex;
@@ -135,6 +146,17 @@
   display: flex;
   align-items: center;
   gap: var(--sp-4);
+}
+@media (max-width: 500px) {
+  .studyplans-toolbar__left {
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .studyplans-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-3);
+  }
 }
 
 .toolbar-calendar-btn {
@@ -549,6 +571,12 @@
 @media (max-width: 900px) {
   .tracker-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .tracker-stats {
+    grid-template-columns: 1fr;
   }
 }
 

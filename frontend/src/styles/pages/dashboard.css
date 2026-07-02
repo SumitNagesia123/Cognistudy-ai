@@ -82,6 +82,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3);
 }
+@media (max-width: 600px) {
+  .streak-cards {
+    grid-template-columns: 1fr;
+  }
+}
 .streak-card {
   background: var(--clr-surface);
   border-radius: var(--r-xl);
@@ -140,6 +145,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3);
+}
+@media (max-width: 768px) {
+  .scorecard-cards {
+    grid-template-columns: 1fr;
+  }
 }
 .scorecard-card {
   background: var(--clr-surface);
@@ -275,6 +285,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-3);
+}
+@media (max-width: 600px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .plan-item-card {
   background: var(--clr-surface);

@@ -136,6 +136,12 @@
   position: relative; animation: fadeUp 0.22s var(--ease) both;
   border: 1px solid var(--clr-border);
 }
+@media (max-width: 480px) {
+  .modal {
+    padding: var(--sp-5);
+    border-radius: var(--r-xl);
+  }
+}
 .modal-close {
   position: absolute; top: var(--sp-5); right: var(--sp-5);
   width: 32px; height: 32px; background: var(--clr-surface-2);
@@ -177,7 +183,7 @@
 .drop-zone svg { margin: 0 auto var(--sp-3); color: var(--clr-primary); }
 
 /* ── Table ─────────────────────────────────────────────── */
-.table-wrap { overflow-x: auto; }
+.table-wrap { overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; }
 thead th { text-align: left; padding: var(--sp-3) var(--sp-4); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-text-3); border-bottom: 2px solid var(--clr-border); }
 tbody td { padding: var(--sp-4); font-size: var(--text-sm); color: var(--clr-text-2); border-bottom: 1px solid var(--clr-border); vertical-align: middle; }
