@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children, addToast }) => {
@@ -17,7 +19,7 @@ export const AuthProvider = ({ children, addToast }) => {
       }
 
       try {
-        const res = await fetch("http://localhost:5000/auth/me", {
+        const res = await fetch(`${API}/auth/me`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -27,7 +29,6 @@ export const AuthProvider = ({ children, addToast }) => {
           const data = await res.json();
           setUser(data);
         } else {
-          // Token expired or invalid
           logout();
         }
       } catch (err) {
@@ -42,7 +43,7 @@ export const AuthProvider = ({ children, addToast }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await fetch("http://localhost:5000/auth/login", {
+      const res = await fetch(`${API}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -66,7 +67,7 @@ export const AuthProvider = ({ children, addToast }) => {
 
   const register = async (name, email, password) => {
     try {
-      const res = await fetch("http://localhost:5000/auth/register", {
+      const res = await fetch(`${API}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password })
@@ -98,7 +99,7 @@ export const AuthProvider = ({ children, addToast }) => {
   const updatePreferences = async (preferences) => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:5000/auth/preferences", {
+      const res = await fetch(`${API}/auth/preferences`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -120,7 +121,7 @@ export const AuthProvider = ({ children, addToast }) => {
   const updatePoints = async (pointsToAdd) => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:5000/auth/points", {
+      const res = await fetch(`${API}/auth/points`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
