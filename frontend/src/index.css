@@ -1,0 +1,15 @@
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
+@import "./styles/layout.css";
+@import "./styles/pages/auth.css";
+@import "./styles/pages/dashboard.css";
+@import "./styles/pages/documents.css";
+@import "./styles/pages/flashcards.css";
+@import "./styles/pages/history.css";
+@import "./styles/pages/notes.css";
+@import "./styles/pages/settings.css";
+@import "./styles/pages/landing.css";
+@import "./styles/pages/automations.css";
+@import "./styles/pages/studyplans.css";
+

@@ -1,0 +1,414 @@
+/* ── Dashboard Page — SIMBI Exact Style ───────────────── */
+
+/* ── Main two-col layout ───────────────────────────────── */
+.simbi-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--sp-5);
+  align-items: start;
+}
+@media (max-width: 1100px) { .simbi-dashboard { grid-template-columns: 1fr; } }
+
+/* ── Hero card ─────────────────────────────────────────── */
+.hero-card {
+  background: var(--clr-primary-light);
+  border-radius: var(--r-2xl);
+  padding: var(--sp-8) var(--sp-8);
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-5);
+  overflow: hidden; position: relative;
+  min-height: 160px;
+  border: 1px solid var(--clr-primary-border);
+}
+.hero-card__text { position: relative; z-index: 1; }
+.hero-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--clr-text-1);
+  margin-bottom: var(--sp-2);
+  letter-spacing: -0.03em;
+}
+.hero-card__sub {
+  font-size: var(--text-sm);
+  color: var(--clr-text-2);
+  margin-bottom: var(--sp-5);
+}
+.hero-card__cta {
+  background: var(--clr-primary);
+  color: white;
+  border: none;
+  border-radius: var(--r-pill);
+  padding: 10px var(--sp-6);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-indigo);
+  transition: all var(--duration-fast);
+}
+.hero-card__cta:hover { background: var(--clr-primary-hover); transform: translateY(-1px); }
+.hero-card__mascot {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  background: #c6c2ff;
+  border-radius: 50%;
+  border: 4px solid var(--clr-surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: var(--sp-4);
+}
+.hero-card__mascot img {
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Study Streak section ──────────────────────────────── */
+.streak-section { margin-bottom: var(--sp-5); }
+.streak-section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--clr-text-1);
+  margin-bottom: var(--sp-3);
+}
+.streak-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+.streak-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+.streak-card__label {
+  font-size: var(--text-xs);
+  color: var(--clr-text-3);
+  font-weight: 500;
+  margin-bottom: var(--sp-2);
+}
+.streak-card__value {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--clr-text-1);
+  display: flex; align-items: center; gap: 6px;
+}
+.streak-card__menu {
+  position: absolute; top: var(--sp-3); right: var(--sp-3);
+  background: transparent; border: none; cursor: pointer;
+  color: var(--clr-text-3); padding: 2px;
+  display: flex; align-items: center;
+}
+
+/* ── Productivity Scorecard ────────────────────────────── */
+.scorecard-section { margin-bottom: var(--sp-5); }
+.scorecard-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-3);
+}
+.scorecard-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--clr-text-1);
+}
+.scorecard-toggle {
+  display: flex; gap: var(--sp-2);
+}
+.scorecard-toggle button {
+  border: none; background: transparent;
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--clr-text-3); cursor: pointer;
+  padding: 4px 8px; border-radius: var(--r-pill);
+  transition: all var(--duration-fast);
+}
+.scorecard-toggle button.active {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+}
+.scorecard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+.scorecard-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+.scorecard-card__label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--clr-text-1);
+  margin-bottom: var(--sp-3);
+}
+.scorecard-card__sub {
+  font-size: var(--text-xs);
+  color: var(--clr-text-3);
+  margin-top: 4px;
+}
+.scorecard-card__sub2 {
+  font-size: var(--text-xs);
+  color: var(--clr-text-2);
+  margin-top: 2px;
+}
+.scorecard-card__btn {
+  margin-top: var(--sp-3);
+  padding: 5px 16px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--clr-border);
+  background: transparent;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--clr-text-2);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+.scorecard-card__btn:hover {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+  border-color: var(--clr-primary-border);
+}
+/* Session nav arrows */
+.session-nav {
+  display: flex; align-items: center; justify-content: center; gap: var(--sp-4);
+}
+.session-nav__arrow {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--clr-border);
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--clr-text-2);
+  transition: all var(--duration-fast);
+}
+.session-nav__arrow:hover { background: var(--clr-primary-light); color: var(--clr-primary); }
+
+/* ── Arc / Speedometer chart ───────────────────────────── */
+.arc-chart {
+  position: relative;
+  width: 100px; height: 58px;
+  margin: 0 auto var(--sp-2);
+  overflow: visible;
+}
+.arc-chart__value {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--clr-text-1);
+}
+
+/* Circular gauge */
+.gauge-ring {
+  position: relative;
+  width: 90px; height: 90px;
+  margin: 0 auto var(--sp-2);
+}
+.gauge-ring__value {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--clr-text-1);
+}
+
+/* Session circular */
+.session-ring {
+  position: relative;
+  width: 80px; height: 80px;
+  margin: 0 auto var(--sp-2);
+}
+.session-ring__value {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--clr-text-1);
+}
+
+/* ── Active Study Plan ─────────────────────────────────── */
+.plans-section { margin-bottom: var(--sp-4); }
+.plans-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-3);
+  flex-wrap: wrap; gap: var(--sp-2);
+}
+.plans-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--clr-text-1);
+}
+.plans-header__view-all {
+  font-size: var(--text-xs);
+  color: var(--clr-primary);
+  font-weight: 600;
+  cursor: pointer;
+  border: none; background: transparent;
+}
+.plans-header__date {
+  display: flex; align-items: center; gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+.plan-item-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex; align-items: center; gap: var(--sp-3);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: all var(--duration-fast);
+}
+.plan-item-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.plan-item-card__icon {
+  width: 38px; height: 38px;
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.plan-item-card__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--clr-text-1);
+  line-height: 1.3;
+}
+.plan-item-card__time {
+  font-size: var(--text-xs);
+  color: var(--clr-text-3);
+  margin-top: 2px;
+}
+.plan-item-card__menu {
+  position: absolute; top: var(--sp-3); right: var(--sp-3);
+  background: transparent; border: none; cursor: pointer;
+  color: var(--clr-text-3);
+  display: flex; align-items: center;
+}
+
+/* ── Right column ──────────────────────────────────────── */
+.simbi-right-col {
+  display: flex; flex-direction: column; gap: var(--sp-4);
+}
+
+/* Rewards & Milestones */
+.rewards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+.reward-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+.reward-card__label {
+  font-size: var(--text-xs);
+  color: var(--clr-text-3);
+  font-weight: 500;
+  margin-bottom: var(--sp-2);
+  line-height: 1.3;
+}
+.reward-card__value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--clr-primary);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.reward-card__img { width: 44px; height: 44px; margin: 0 auto var(--sp-2); display: block; }
+.reward-card--nft {
+  background: var(--clr-surface-2);
+}
+
+/* Study Tips card */
+.tips-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: var(--shadow-card);
+}
+.tips-card__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-3);
+}
+.tips-card__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--clr-text-1);
+}
+.tips-card__tag {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+  border-radius: var(--r-pill);
+  padding: 2px 8px;
+}
+.tips-card__msg {
+  font-size: var(--text-sm);
+  color: var(--clr-text-2);
+  line-height: 1.65;
+}
+.tips-card__time {
+  font-size: var(--text-xs);
+  color: var(--clr-text-3);
+}
+
+/* Study Consistency chart */
+.consistency-card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--clr-border);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-card);
+}
+.consistency-card__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+.consistency-card__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--clr-text-1);
+}
+.area-chart-wrap {
+  width: 100%; overflow: visible;
+}
+.area-chart-ylabel {
+  font-size: 9px;
+  fill: var(--clr-text-3);
+}
+.area-chart-xlabel {
+  font-size: 9px;
+  fill: var(--clr-text-3);
+}

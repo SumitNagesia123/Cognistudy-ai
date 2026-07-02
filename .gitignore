@@ -1,0 +1,44 @@
+# ─── Environment Variables (NEVER COMMIT THESE) ──────────────
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
+
+# ─── Dependencies ─────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ─── Build Outputs ────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+.next/
+out/
+
+# ─── Logs ─────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─── OS / Editor Files ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Runtime / Misc ───────────────────────────────────────────
+*.local
+.cache/
+.temp/
+coverage/

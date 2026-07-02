@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════════════
+   AUTOMATIONS PAGE STYLES — CogniStudy AI
+   Cohesive premium SaaS styling for automations grid.
+   ══════════════════════════════════════════════════════════ */
+
+.automations-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  animation: fadeIn var(--duration-base) var(--ease);
+}
+
+.automation-card {
+  border: 1px solid var(--clr-border);
+  transition: all var(--duration-base) var(--ease);
+  position: relative;
+  overflow: hidden;
+  background: var(--clr-surface);
+}
+
+.automation-card.active {
+  border-color: rgba(92, 95, 239, 0.35);
+  background: linear-gradient(135deg, var(--clr-surface) 0%, var(--clr-indigo-50) 100%);
+}
+
+[data-theme="dark"] .automation-card.active {
+  border-color: rgba(92, 95, 239, 0.3);
+  background: linear-gradient(135deg, var(--clr-surface) 0%, rgba(92, 95, 239, 0.08) 100%);
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.automation-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--clr-text-1);
+}
+
+.automation-desc {
+  color: var(--clr-text-3);
+  font-size: var(--text-sm);
+  margin-top: var(--sp-1);
+}
+
+.toggle-switch-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--clr-text-3);
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.toggle-switch-btn.active {
+  color: var(--clr-indigo-500);
+}
