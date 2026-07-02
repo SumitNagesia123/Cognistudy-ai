@@ -45,16 +45,25 @@ const pdfParse = require("pdf-parse");
 const app = express();
 
 // ─────────────────────────────────────────
-// Fix #7 — Restrict CORS to the known frontend
-// origin. ALLOWED_ORIGIN defaults to the Vite dev
-// server; override via env for production.
+// CORS — allow Vercel frontend + local dev
+// Set ALLOWED_ORIGINS in env as comma-separated list for production,
+// e.g. "https://cognistudy-ai.vercel.app,http://localhost:5173"
 // ─────────────────────────────────────────
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+const rawOrigins = process.env.ALLOWED_ORIGINS || process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+const allowedOrigins = rawOrigins.split(",").map(o => o.trim()).filter(Boolean);
+
 app.use(cors({
-  origin: ALLOWED_ORIGIN,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, curl, Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    callback(new Error(`CORS: Origin ${origin} not allowed`));
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
+
 
 app.use(express.json());
 
